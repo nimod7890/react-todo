@@ -4,6 +4,6 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  cacheDir: "./.vite",
+  cacheDir: "./.yarn/.vite",
   server: { port: 3000 },
 });
