@@ -1,5 +1,5 @@
 import { PropsWithChildren, useState } from "react";
-import { LogContext } from "src/context/log/context";
+import { LogContext } from "src/contexts/log/context";
 import { Log } from "src/models/log";
 
 export default function LogProvider({ children }: PropsWithChildren) {
