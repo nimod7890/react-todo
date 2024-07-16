@@ -1,5 +1,1 @@
-export enum API {
-    
-}
-  
-  
+export const enum API {}
