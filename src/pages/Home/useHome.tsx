@@ -1,14 +1,10 @@
-import { useContext } from "react";
-import { RootContext } from "../../store/context/RootContext";
-import { requestLogin } from "../../store/actions/userAction";
+import useUserContext from "src/store/hooks/useUserContext";
 
 //view model
 const useHome = () => {
-    const { state, dispatch } = useContext(RootContext);
-    const { user } = state;
-    const login = () => {
-        requestLogin(dispatch,{name: "hihi"});
-    }
-    return { user,login };
+  const { user, login } = useUserContext();
+
+  return { user, login };
 };
+
 export default useHome;

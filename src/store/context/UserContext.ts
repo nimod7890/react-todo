@@ -1,5 +1,5 @@
-import { createContext, Dispatch } from "react";
-import { UserState, UserAction } from "src/store/types/userTypes";
+import { createContext } from "react";
+import { LoginUserProps, UserState } from "src/store/types/userTypes";
 
 const initialUser = {
   name: "",
@@ -7,11 +7,13 @@ const initialUser = {
 };
 
 const UserContext = createContext<{
-  state: UserState;
-  dispatch: Dispatch<UserAction>;
+  user: UserState;
+  login: (payload: LoginUserProps) => void;
+  logout: () => void;
 }>({
-  state: initialUser,
-  dispatch: () => null,
+  user: initialUser,
+  login: () => null,
+  logout: () => null,
 });
 
 export { UserContext, initialUser };

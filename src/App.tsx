@@ -1,21 +1,16 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./pages/Home/Home";
-import Splash from "./pages/Splash/Splash";
-import { ROUTES } from "./constants/routes";
-import SystemWrapper from "./components/warpper/SystemWrapper";
-import RootContextProvider from './store/provider/RootContextProvider';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { ROUTES } from "src/constants/routes";
+import Home from "src/pages/Home/Home";
+import RootContextProvider from "src/store/provider";
 
 function App() {
   return (
     <RootContextProvider>
-      <SystemWrapper>
-        <Router>
-          <Routes >
-            <Route path={ROUTES.SPLASH} element={<Splash />} />
-            <Route path={ROUTES.HOME} element={<Home />} />
-          </Routes>
-        </Router>
-      </SystemWrapper>
+      <BrowserRouter>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </RootContextProvider>
   );
 }

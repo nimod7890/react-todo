@@ -13,10 +13,9 @@ export const enum USER_ACTION {
 export interface LoginUserProps {
   name: string;
 }
-export interface LogoutUserProps {}
 
 export type UserAction =
   | { type: USER_ACTION.LOGIN_USER; payload: LoginUserProps }
-  | { type: USER_ACTION.LOGOUT_USER; payload: LogoutUserProps };
+  | { type: USER_ACTION.LOGOUT_USER };
 
 export type UserDispatch = Dispatch<UserAction>;
