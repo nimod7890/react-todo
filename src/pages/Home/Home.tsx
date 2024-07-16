@@ -8,7 +8,7 @@ const Home: FC = () => {
         login  
     } = useHome();
 
-    return <div>
+    return <div className="bg-pink-400" >
         <div onClick={login} >
             {JSON.stringify(user)}
             LOGIN

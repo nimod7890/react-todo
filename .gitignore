@@ -32,3 +32,9 @@ dist-ssr
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# vite cache
+.yarn/.vite
+
+# storybook
+*storybook.log
