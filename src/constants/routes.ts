@@ -1,7 +1,4 @@
-export enum ROUTES {
-    SPLASH = '/',
-    HOME = '/Home',
-    LOGIN = '/Login',
+export const enum ROUTES {
+  HOME = "/Home",
+  LOGIN = "/Login",
 }
-  
-  
