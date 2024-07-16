@@ -1,7 +1,7 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { ROUTES } from "src/constants/routes";
-import Home from "src/pages/Home/Home";
-import RootContextProvider from "src/store/provider";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ROUTES from 'src/constants/routes';
+import RootContextProvider from 'src/store/provider';
+import Home from 'src/views/Home/Home';
 
 function App() {
   return (

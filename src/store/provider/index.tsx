@@ -1,6 +1,9 @@
-import { PropsWithChildren } from "react";
-import UserContextProvider from "src/store/provider/UserContextProvider";
+import { FC } from 'react';
+import UserContextProvider from 'src/store/provider/UserContextProvider';
+import CombinedComponents from 'src/utils/combineComponents';
 
-export default function RootContextProvider({ children }: PropsWithChildren) {
-  return <UserContextProvider>{children}</UserContextProvider>;
+const providers:FC[] = [UserContextProvider];
+
+export default function RootContextProvider() {
+  return CombinedComponents(providers);
 }

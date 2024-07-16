@@ -1,4 +1,4 @@
-import { USER_ACTION, UserAction, UserState } from "../types/userTypes";
+import { UserState, UserAction, USER_ACTION } from 'src/store/types/userTypes';
 
 const userReducer = (state: UserState, action: UserAction): UserState => {
   switch (action.type) {

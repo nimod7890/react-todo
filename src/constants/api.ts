@@ -1,1 +1,3 @@
-export const enum API {}
+const enum API {}
+
+export default API;

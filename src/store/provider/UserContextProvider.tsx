@@ -1,9 +1,9 @@
-import { PropsWithChildren, useReducer } from "react";
-import { initialUser, UserContext } from "../context/userContext";
-import userReducer from "src/store/reducer/userReducer";
-import { LoginUserProps, USER_ACTION } from "src/store/types/userTypes";
+import { PropsWithChildren, useMemo, useReducer } from 'react';
+import { initialUser, UserContext } from 'src/store/context/userContext';
+import { LoginUserProps, USER_ACTION } from 'src/store/types/userTypes';
+import userReducer from 'src/store/reducer/userReducer';
 
-const UserContextProvider = ({ children }: PropsWithChildren) => {
+function UserContextProvider({ children }: PropsWithChildren) {
   const [user, dispatch] = useReducer(userReducer, initialUser);
 
   const login = (payload: LoginUserProps) => {
@@ -14,7 +14,13 @@ const UserContextProvider = ({ children }: PropsWithChildren) => {
     dispatch({ type: USER_ACTION.LOGOUT_USER });
   };
 
-  return <UserContext.Provider value={{ user, login, logout }}>{children}</UserContext.Provider>;
-};
+  const context = useMemo(() => ({ user, login, logout }), [user]);
+
+  return (
+    <UserContext.Provider value={context}>
+      {children}
+    </UserContext.Provider>
+  );
+}
 
 export default UserContextProvider;

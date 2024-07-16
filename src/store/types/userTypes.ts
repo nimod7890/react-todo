@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import { Dispatch } from 'react';
 
 export interface UserState {
   name: string;
@@ -6,8 +6,8 @@ export interface UserState {
 }
 
 export const enum USER_ACTION {
-  LOGIN_USER = "LOGIN_USER",
-  LOGOUT_USER = "LOGOUT_USER",
+  LOGIN_USER = 'LOGIN_USER',
+  LOGOUT_USER = 'LOGOUT_USER',
 }
 
 export interface LoginUserProps {
