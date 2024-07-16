@@ -1,6 +1,6 @@
 import { FC } from "react";
 import useHome from "./useHome";
-
+import Button from "../../components/common/Button"
 //view
 const Home: FC = () => {
     const { 
@@ -8,12 +8,14 @@ const Home: FC = () => {
         login  
     } = useHome();
 
-    return <div className="bg-pink-400 flex-row w-full" >
+    return <div className=" flex-row w-full" >
         <div onClick={login} >
             {JSON.stringify(user)}
             LOGIN
         </div>
-        Home
+        <Button variant="register" onClick={() => console.log('hi')} />
+        <Button variant="delete" />
+
     </div>
 }
 export default Home;
