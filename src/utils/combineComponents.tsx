@@ -1,18 +1,21 @@
-import { ComponentType, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
-type Component=ComponentType<{ children: ReactNode }>
+type Component = FC<{ children: ReactNode }>;
 
 export default function CombinedComponents(
   components: Component[],
-): Component {
+): FC<{ children: ReactNode }> {
   return components.reduce(
-    (AccumulatedComponents, CurrentComponent) => function Combined({ children }) {
-      return (
-        <AccumulatedComponents>
-          <CurrentComponent>{children}</CurrentComponent>
-        </AccumulatedComponents>
-      );
+    (AccumulatedComponents, CurrentComponent) => {
+      const Combined: FC<{ children: ReactNode }> = ({ children }) => {
+        return (
+          <AccumulatedComponents>
+            <CurrentComponent>{children}</CurrentComponent>
+          </AccumulatedComponents>
+        );
+      };
+      return Combined;
     },
-    ({ children }) => children,
+    ({ children }) => <>{children}</>,
   );
 }

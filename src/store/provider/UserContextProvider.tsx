@@ -1,7 +1,8 @@
 import { PropsWithChildren, useMemo, useReducer } from 'react';
-import { initialUser, UserContext } from 'src/store/context/userContext';
+
 import { LoginUserProps, USER_ACTION } from 'src/store/types/userTypes';
 import userReducer from 'src/store/reducer/userReducer';
+import { initialUser, UserContext } from 'src/store/context/UserContext';
 
 function UserContextProvider({ children }: PropsWithChildren) {
   const [user, dispatch] = useReducer(userReducer, initialUser);
